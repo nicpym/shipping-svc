@@ -1,0 +1,39 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: shipping-svc
+  description: Shipping Service
+  annotations:
+    backstage.io/kubernetes-id: shipping-svc
+    backstage.io/kubernetes-namespace: workloads
+    backstage.io/kubernetes-cluster: team-a-cluster
+    github.com/project-slug: nicpym/shipping-svc
+    argocd/app-name: shipping-svc
+    argocd/app-namespace: team-a-cluster
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - python
+    - fastapi
+spec:
+  type: service
+  lifecycle: experimental
+  owner: group:default/team-a
+  system: connect-demo
+  dependsOn:
+    - resource:default/team-a-cluster
+  providesApis:
+    - shipping-svc
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: shipping-svc
+  description: Shipping Service
+  tags:
+    - rest
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: group:default/team-a
+  definition:
+    $text: ./openapi.yaml

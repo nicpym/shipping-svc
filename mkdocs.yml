@@ -1,0 +1,7 @@
+site_name: 'shipping-svc-docs'
+site_description: Shipping Service
+nav:
+  - Overview: index.md
+
+plugins:
+  - techdocs-core

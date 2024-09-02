@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shipping-svc
+spec:
+  selector:
+    matchLabels:
+      app: shipping-svc
+  template:
+    metadata:
+      labels:
+        app: shipping-svc
+    spec:
+      containers:
+      - name: shipping-svc
+        image: to-be-replaced:latest
+        ports:
+        - containerPort: 8080
+        env:
+          - name: PORT
+            value: "8080"
