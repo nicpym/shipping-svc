@@ -9,6 +9,6 @@ commonLabels:
   app: shipping-svc
   backstage.io/kubernetes-id: shipping-svc
 images:
-- name: to-be-replaced
-  newName: ealen/echo-server
-  newTag: latest
+  - name: to-be-replaced
+    newName: ghcr.io/nicpym/shipping-svc
+    newTag: v0.0.1
